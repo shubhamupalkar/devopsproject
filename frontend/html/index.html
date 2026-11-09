@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker App Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Docker 3-Tier Demo</h1>
+        <p class="subtitle">Simple demonstration of Nginx, Node.js, and PostgreSQL running in Docker containers.</p>
+
+        <!-- Status List -->
+        <div class="status-box">
+            <div class="status-item">
+                <span class="dot green"></span>
+                <span><strong>Website (Nginx):</strong> Running</span>
+            </div>
+            <div class="status-item">
+                <span id="backendDot" class="dot yellow"></span>
+                <span><strong>Backend (Node.js):</strong> <span id="backendStatus">Checking...</span></span>
+            </div>
+            <div class="status-item">
+                <span id="dbDot" class="dot yellow"></span>
+                <span><strong>Database (PostgreSQL):</strong> <span id="dbStatus">Checking...</span></span>
+            </div>
+        </div>
+
+        <!-- Database Info Proof -->
+        <div class="db-proof">
+            <p><strong>DB Response Time:</strong> <span id="dbLatency">-</span></p>
+            <p><strong>DB Server Time:</strong> <span id="dbTime">-</span></p>
+        </div>
+
+        <button id="testBtn" class="btn">Test DB Connection</button>
+
+        <!-- Simple Database Items List -->
+        <div class="data-section">
+            <h3>Database Items</h3>
+            <ul id="itemsList">
+                <li>Loading data from database...</li>
+            </ul>
+
+            <form id="addForm" class="form-row">
+                <input type="text" id="itemInput" placeholder="Add an item to database..." required />
+                <button type="submit" class="btn btn-add">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
